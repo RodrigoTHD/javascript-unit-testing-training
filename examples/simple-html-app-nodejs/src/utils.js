@@ -1,4 +1,4 @@
-import { divide, minus, multiply, sum } from './math.js';
+import { divide, multiply, subtract, sum } from './math.js';
 
 const removeNumbersRegex = /\d/g;
 const removeOperatorRegex = /\D/g;
@@ -78,7 +78,7 @@ export function setResult() {
       result = multiply(operation.numberA, operation.numberB);
       break;
     case '-':
-      result = minus(operation.numberA, operation.numberB);
+      result = subtract(operation.numberA, operation.numberB);
       break;
     case '+':
       result = sum(operation.numberA, operation.numberB);

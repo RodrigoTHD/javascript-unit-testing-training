@@ -2,7 +2,7 @@ export function sum(numberA, numberB) {
   return numberA + numberB;
 }
 
-export function minus(numberA, numberB) {
+export function subtract(numberA, numberB) {
   return numberA - numberB;
 }
 
