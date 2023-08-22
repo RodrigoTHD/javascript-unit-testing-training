@@ -1,49 +1,29 @@
 import { divide, multiply, subtract, sum } from './math.js';
+import {
+  getOperatorFromString,
+  isCalculatorButton,
+  isClearButton,
+  isOperatorButton,
+  isResultButton
+} from './mathUtils.js';
 
-const removeNumbersRegex = /\d/g;
-const removeOperatorRegex = /\D/g;
-
-export function getCalculatorBody() {
+function getCalculatorBody() {
   return document.querySelector('.calculator-body');
 }
 
-export function isCalculatorButton(dom) {
-  return dom.classList.contains('cal-btn');
-}
-
-export function isOperatorButton(value) {
-  return ['/', 'x', '-', '+'].includes(value);
-}
-
-export function isResultButton(operator) {
-  return operator === '=';
-}
-
-export function isClearButton(operator) {
-  return operator === 'c';
-}
-
-export function getOperatorFromString(value) {
-  return String(value).replace(removeNumbersRegex, '');
-}
-
-export function getNumberFromString(value) {
-  return String(value).replace(removeOperatorRegex, '');
-}
-
-export function getDisplayField() {
+function getDisplayField() {
   return document.querySelector('#display');
 }
 
-export function setDisplayValue(newValue) {
-  getDisplayField().value = newValue;
-}
-
-export function getDisplayValue() {
+function getDisplayValue() {
   return getDisplayField().value;
 }
 
-export function getCurrentOperation() {
+function setDisplayValue(newValue) {
+  getDisplayField().value = newValue;
+}
+
+function getCurrentOperation() {
   const currentValue = getDisplayValue();
   const operator = getOperatorFromString(currentValue);
   const [numberA, numberB] = currentValue.split(operator);
@@ -54,7 +34,7 @@ export function getCurrentOperation() {
   };
 }
 
-export function setValue(newValue) {
+function setValue(newValue) {
   const oldValue = getDisplayValue();
   if (oldValue === '0') {
     setDisplayValue(newValue);
@@ -63,12 +43,17 @@ export function setValue(newValue) {
   }
 }
 
-export function clearValue() {
+function clearValue() {
   setDisplayValue(0);
 }
 
-export function setResult() {
+function setResult() {
   const operation = getCurrentOperation();
+
+  if (!operation.operator) {
+    return;
+  }
+
   let result = 0;
   switch (operation.operator) {
     case '/':
@@ -92,19 +77,19 @@ export function setResult() {
   }
 }
 
-export function setOperator(newOperator) {
+function setOperator(newOperator) {
   let newValue;
-  const oldValue = getDisplayValue();
-  const oldOperator = getOperatorFromString(oldValue);
+  const currentValue = getDisplayValue();
+  const oldOperator = getOperatorFromString(currentValue);
   if (oldOperator) {
-    newValue = oldValue.replace(oldOperator, newOperator);
+    newValue = currentValue.replace(oldOperator, newOperator);
   } else {
-    newValue = `${oldValue}${newOperator}`;
+    newValue = `${currentValue}${newOperator}`;
   }
   setDisplayValue(newValue);
 }
 
-export function calculate(newAction) {
+function calculate(newAction) {
   if (isOperatorButton(newAction)) {
     setOperator(newAction);
   } else if (isClearButton(newAction)) {

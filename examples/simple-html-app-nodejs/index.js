@@ -1,4 +1,4 @@
-import { initCalculatorEvents } from './src/utils.js';
+import { initCalculatorEvents } from './src/app.js';
 
 (function onLoad() {
   initCalculatorEvents();
