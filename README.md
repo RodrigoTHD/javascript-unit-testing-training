@@ -1,1 +1,1 @@
-# javascript-unit-testing-training
+# JavaScript - Unit Testing Training

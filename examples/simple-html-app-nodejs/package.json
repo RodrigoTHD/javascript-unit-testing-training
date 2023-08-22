@@ -1,0 +1,13 @@
+{
+  "name": "simple-html-app-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rolf Rodrigo Krueger",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "start": "http-server -o -c-1 -p4455"
+  }
+}
