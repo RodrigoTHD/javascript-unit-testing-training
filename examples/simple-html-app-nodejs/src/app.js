@@ -12,7 +12,7 @@ function getCalculatorBody() {
 }
 
 function getDisplayField() {
-  return document.querySelector('#display');
+  return document.querySelector('#calculator-display');
 }
 
 function getDisplayValue() {

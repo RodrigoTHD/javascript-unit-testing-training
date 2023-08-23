@@ -1,0 +1,16 @@
+#calculator-display {
+  display: inline-flex;
+  height: 150px;
+  text-align: right;
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  font-size: 50px;
+  color: white;
+  min-width: 0;
+}
+
+#calculator-display:focus {
+  outline: none;
+}

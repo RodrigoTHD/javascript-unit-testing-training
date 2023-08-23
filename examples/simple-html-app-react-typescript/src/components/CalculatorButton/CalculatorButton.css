@@ -1,0 +1,15 @@
+.cal-btn {
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 0;
+  margin: 3px;
+  box-sizing: border-box;
+  background: #5e5858;
+  border: none;
+  font-size: 35px;
+  line-height: 30px;
+  border-radius: 5%;
+  color: #ecedef;
+  cursor: pointer;
+}

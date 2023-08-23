@@ -1,0 +1,13 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 425px;
+  border-radius: 5px;
+  background-color: #2b2828;
+  padding: 10px;
+}
+
+.calculator-header {
+  display: flex;
+  flex-direction: column;
+}
