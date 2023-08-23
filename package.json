@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/RodrigoTHD/javascript-unit-testing-training.git",
-  "author": "Rolf Rodrigo Krueger <rodrigo.krueger@philips.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "prettier": "^3.0.2"
-  }
+  "author": "Rolf Rodrigo Krueger <rodrigothd@gmail.com>",
+  "license": "MIT"
 }

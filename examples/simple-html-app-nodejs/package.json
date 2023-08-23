@@ -2,10 +2,11 @@
   "name": "simple-html-app-nodejs",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Rolf Rodrigo Krueger",
+  "author": "Rolf Rodrigo Krueger <rodrigothd@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "prettier": "^3.0.2"
   },
   "scripts": {
     "start": "http-server -o -c-1 -p4455"

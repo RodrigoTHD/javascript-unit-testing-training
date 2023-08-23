@@ -5,8 +5,8 @@ export function isCalculatorButton(dom) {
   return dom.classList.contains('cal-btn');
 }
 
-export function isOperatorButton(value) {
-  return ['/', 'x', '-', '+'].includes(value);
+export function isOperatorButton(operator) {
+  return ['/', 'x', '-', '+'].includes(operator);
 }
 
 export function isResultButton(operator) {
