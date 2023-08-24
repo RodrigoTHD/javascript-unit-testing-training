@@ -33,6 +33,8 @@ http://localhost:8000/profiles?total=3
 
 Available route that returns a list of profiles.
 
+> The default value for query parameter total is 1.
+
 ```ts
 {
   id: string,
