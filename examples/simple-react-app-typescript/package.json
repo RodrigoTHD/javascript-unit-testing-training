@@ -11,7 +11,7 @@
     "@types/node": "^16.18.43",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "axios": "^1.4.0",
+    "axios": "0.26.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -22,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "yarn test --coverage ./src",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,6 +41,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/testUtils/**",
+      "!**/testUtils.{ts,tsx}",
+      "!**/*.d.ts",
+      "!**/index.ts",
+      "!**/index.tsx",
+      "!**/*types.ts",
+      "!**/node_modules/**"
     ]
   }
 }

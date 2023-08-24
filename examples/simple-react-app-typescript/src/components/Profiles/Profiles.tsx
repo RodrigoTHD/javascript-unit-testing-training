@@ -18,7 +18,7 @@ export const Profiles: FC = () => {
       <h2>Profiles</h2>
       <ul>
         {data?.map(profile => (
-          <li>{profile.fullName}</li>
+          <li key={profile.fullName}>{profile.fullName}</li>
         ))}
       </ul>
     </div>

@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import axios, { AxiosError } from 'axios';
 import { Profile, useProfilesProps } from './types';
+import axios, { AxiosError } from 'axios';
 
 export const useProfiles = (props?: useProfilesProps) => {
   const { total } = props || {};
