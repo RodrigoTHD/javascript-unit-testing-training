@@ -4,7 +4,7 @@
   "private": true,
   "author": "Rolf Rodrigo Krueger <rodrigothd@gmail.com>",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "set PORT=8000 & node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
