@@ -1,20 +1,47 @@
 import { render, screen } from '@testing-library/react';
 import { Profiles } from './Profiles';
-import { mocked } from 'jest-mock';
 import { useProfiles } from './useProfiles';
-import { profilesListUseQueryResultMock } from './testUtils';
+import { mocked } from 'jest-mock';
+import {
+  profilesListMock,
+  useQueryProfilesErrorMock,
+  useQueryProfilesLoadingMock,
+  useQueryProfilesMock
+} from './testUtils';
 
 jest.mock('./useProfiles');
 const mockedUseProfiles = mocked(useProfiles);
 
-beforeEach(() => {
-  mockedUseProfiles.mockReturnValue(profilesListUseQueryResultMock);
-});
-
 describe('Profiles', () => {
-  it('should render profiles', async () => {
+  it('should render profiles', () => {
+    mockedUseProfiles.mockReturnValue(useQueryProfilesMock);
+
     render(<Profiles />);
-    const profileTitle = await screen.findByText('Profiles');
-    expect(profileTitle).toBeVisible();
+
+    expect(screen.getByText(profilesListMock[0].fullName)).toBeInTheDocument();
+  });
+
+  it('should render profiles title', () => {
+    mockedUseProfiles.mockReturnValue(useQueryProfilesMock);
+
+    render(<Profiles />);
+
+    expect(screen.getByText('Profiles')).toBeInTheDocument();
+  });
+
+  it('should render error', () => {
+    mockedUseProfiles.mockReturnValue(useQueryProfilesErrorMock);
+
+    render(<Profiles />);
+
+    expect(screen.getByText('Error when getting profiles')).toBeVisible();
+  });
+
+  it('should render with loading menssage', () => {
+    mockedUseProfiles.mockReturnValue(useQueryProfilesLoadingMock);
+
+    render(<Profiles />);
+
+    expect(screen.getByText('Getting the profiles...')).toBeVisible();
   });
 });

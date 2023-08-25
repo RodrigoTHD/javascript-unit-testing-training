@@ -11,7 +11,7 @@ export const Profiles: FC = () => {
     return <h2>Error when getting profiles</h2>;
   }
   if (isLoading) {
-    return <h2>{'Getting the profiles...'}</h2>;
+    return <h2>Getting the profiles...</h2>;
   }
   return (
     <div>

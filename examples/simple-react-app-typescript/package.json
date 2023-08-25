@@ -22,8 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "yarn test --coverage ./src",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:coverage": "yarn test --coverage ./src"
   },
   "eslintConfig": {
     "extends": [
